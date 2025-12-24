@@ -3,6 +3,14 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  --surface: #2d2d2d;
+  --primary: #646cff;
+  --text: #ffffff;
+  --text-secondary: #888888;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --error: #f44336;
+  --info: #2196f3;
 }
 
 .logo {
