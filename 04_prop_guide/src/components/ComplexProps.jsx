@@ -2,6 +2,10 @@
 
 import React from "react";
 
+// Yahan simple props nahi, balki objects pass kiye gaye hain: jaha
+// user = User ka data (name, email, role, stats etc.)
+// theme = Styling control (colors, background, badges)
+// actions = Button configs (label, onClick, className)
 function UserProfileCard({ user, theme, actions }) {
   return (
     <div
@@ -30,9 +34,24 @@ function UserProfileCard({ user, theme, actions }) {
         </div>
       </div>
 
+      {/* Conditional rendering hua hai yaha agar stats exist karega tabhi div element render hoga */}
       {user.stats && (
         <div className="mt-4 pt-4 border-t border-gray-300 grid grid-cols-3 gap-4">
+          {/* user.stats ek object hai, jaise: jisme hai key value pair waha key hai post , followers , following etc. */}
+          {/* Object.entries() kya karta hai? */}
+          {/* Convert karta hai object ko array of arrays me: */}
+          {/* example 
+              [
+               ["posts", 145],
+               ["followers", 2834],
+               ["following", 421]
+              ]
+           */}
+          {/* map() se hum har stat ko UI me convert kar rahe hain */}
+          {/* key → "posts"
+             value → 145 */}
           {Object.entries(user.stats).map(([key, value]) => (
+            //* key={key} kyon? React ko batane ke liye ki:Ye list ka unique item hai Re-rendering fast ho
             <div key={key} className="text-center">
               <div className="text-2xl font-bold">{value}</div>
               <div className="text-xs opacity-75 capitalize">{key}</div>
