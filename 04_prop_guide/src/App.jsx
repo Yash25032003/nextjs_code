@@ -46,8 +46,8 @@ function AppContent() {
             A comprehensive guide to understanding props in React
           </p>
         </header>
-        <div className="space-y-8">
-          <div id="basic" className="scroll-mt-200">
+        <div className="space-y-9 mt-6">
+          <div id="basic" className="scroll-mt-200 -4">
             <BasicProps />
           </div>
           <div id="basic" className="scroll-mt-200">

@@ -4,7 +4,7 @@ import React from "react";
 import { useState } from "react";
 
 //Reusable button component
-//! props ko destruct kar liya parameters me function ke
+//! props ko destruct kar liya parameters me function ke so iss process ko kehte hai destructuring
 function Button({ text, color, size, onClick, disabled }) {
   return (
     <button
@@ -40,6 +40,7 @@ const BasicProps = () => {
       <div className="space-y-3">
         <h3 className="mt-3 text-lg font-semibold">Different Colors: </h3>
         <div className="flex flex-wrap gap-4">
+          {/* Use kar rahe hai above Button component ko jisse hamne create kiya hai with variations in color  , size , disabled ability */}
           <Button
             text="Primary Color"
             color="primary"
