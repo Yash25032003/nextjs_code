@@ -18,7 +18,7 @@ function Navigation() {
   return (
     <nav className={`sticky top-0 z-50 shadow-md`}>
       <div>
-        <div className="flex justify-center ">
+        <div className="flex flex-wrap justify-center ">
           {sections.map((section) => (
             <button
               className="px-4 py-2 rounded-lg font-medium bg-blue-600 text-white ml-2 mt-2 hover:bg-blue-700"
