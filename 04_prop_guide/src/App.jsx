@@ -3,9 +3,11 @@ import BasicProps from "./components/BasicProps.jsx";
 import ChildrenProps from "./components/ChildrenProps.jsx";
 import ComplexProps from "./components/ComplexProps.jsx";
 import RefProps from "./components/RefProps.jsx";
-import ThemeToggler from "./components/ThemeToggler.jsx";
+import ThemeToggler, {
+  ThemeProvider,
+  useTheme,
+} from "./components/ThemeToggler.jsx";
 
-const isDark = true;
 function Navigation() {
   const sections = [
     { id: "basic", label: "Basic Props", icon: "📦" },
@@ -35,8 +37,14 @@ function Navigation() {
 }
 
 function AppContent() {
+  // hamne useTheme ko directly access kar liya by importing useTheme hook from the context jo hamne create kiya hai ThemeToggler file me that is known as context api
+  const { isDark } = useTheme();
   return (
-    <div className="min-h-screen bg-gray-800 text-white ">
+    <div
+      className={`min-h-screen ${
+        isDark ? "bg-gray-800 text-white" : "bg-gray-200 text-black"
+      }`}
+    >
       <Navigation />
       <div>
         <header className="text-center mt-10">
@@ -78,7 +86,11 @@ function AppContent() {
 }
 
 function App() {
-  return <AppContent />;
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  );
 }
 
 export default App;
