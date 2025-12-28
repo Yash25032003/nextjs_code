@@ -1,5 +1,5 @@
 import React from "react";
-import { CartItem } from "./CartItem.jsx";
+import CartItem from "./CartItem.jsx";
 
 const Cart = ({ cart, onUpdateQuantity, onRemove, total }) => {
   if (cart.length === 0) {

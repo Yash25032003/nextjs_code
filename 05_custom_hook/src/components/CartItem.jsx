@@ -16,6 +16,9 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
           </button>
         </div>
       </div>
+      <button className="remove-btn" onClick={() => onRemove(item.id)}>
+        <FaTrash />
+      </button>
     </div>
   );
 };
