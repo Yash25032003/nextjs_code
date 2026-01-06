@@ -25,3 +25,7 @@
 // | Risk         | Data overwrite   | Safer               |
 // | Payload size | Large            | Small               |
 // | Use case     | Replace resource | Modify resource     |
+
+//? How to handle dynamic route ka example hai hello folder me hai.
+
+// example of PUT is in folder put-user and example of PATCH is in folder patch-user
