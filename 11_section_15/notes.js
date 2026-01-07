@@ -29,3 +29,32 @@
 //? How to handle dynamic route ka example hai hello folder me hai.
 
 // example of PUT is in folder put-user and example of PATCH is in folder patch-user
+
+//! Q5. What is Query parameters in nextjs?
+// Query parameters URL ka wo part hote hain jo ? ke baad aata hai aur optional data pass karne ke kaam aata hai.
+// example : /products?page=2&sort=price , where page=2 , sort = price
+
+//? Queyr paramteres kab use hote hai?
+// Pagination (page=2)
+// Search (q=iphone)
+// Filters (category=mobile)
+// Sorting (sort=price)
+// Optional data pass karna
+
+//* Query parameters ko access karne ka tarika hai in folder hello
+
+//! Q6.What are headers in next js?
+// Headers HTTP request aur response ke sath bheji jaane wali extra information hoti hai , Client aur server ke beech metadata pass hota hai.
+
+//? Headers Kyun Use Karte Hain? : Authentication (token pass karna) , Content type batana
+
+//* Request Headers: It carries information about the incoming request and tells the server about the client , what to accept , auth information , etc.
+
+//* Response Headers: Ye headers server → client response ke sath jaate hain aur client ko batate hain
+// response ka type , caching rules  , security rules
+
+//! Q7. What is Cookies in next js?
+// Cookies chhoti-chhoti data values hoti hain jo browser me store hoti hain aur har request ke sath server ko automatically bheji jati hain.
+// It is mostly used for Authentication , user preference etc
+
+// kese cookies ko access karte hai and send karte hai from api postman uske examples hai in folder cookies inside api folder.

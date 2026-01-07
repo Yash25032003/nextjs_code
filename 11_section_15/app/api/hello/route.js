@@ -24,10 +24,29 @@ export let users = [
 // creating a GET endpoint on /api/hello route
 export async function GET(request) {
   try {
+    // query parameters ko access karne ka tarika
+    const searchParams = request.nextUrl.searchParams;
+
+    const name = searchParams.get("name"); // URL se name ki value ko access kar rahe hai
+
+    const age = searchParams.get("age");
+
+    let filtereddata = users;
+    // agar age params me hoga as a filter to age field ko compare karenge user data se if exist to show kar denge warna empty .
+    if (age) {
+      filtereddata = filtereddata.filter((user) => user.age === Number(age));
+    }
+    // same for name field as well.
+    if (name) {
+      filtereddata = filtereddata.filter((user) =>
+        user.name.toLowerCase().includes(name.toLowerCase())
+      );
+    }
+
     return NextResponse.json({
       success: true,
-      data: users,
-      length: users.length,
+      data: filtereddata,
+      length: filtereddata.length,
     });
   } catch (error) {
     return NextResponse.json({
