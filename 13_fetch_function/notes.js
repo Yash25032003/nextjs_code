@@ -67,3 +67,28 @@
 // 1. Dynamic Filtering: Query params ke through data ko filter karna.
 // 2. Deep Linking: Exact state ka URL banana jise directly open kiya ja sake
 // 3. Pagination : Data ko pages me divide karna using query params
+
+//! Q7. What is useRouter hook in nextjs?
+// useRouter ek Next.js ka hook hai jo hume programmatically page navigation karne deta hai, jaise:
+// button click pe page change karna , back jana , replace karna , prefetch karna
+// iska example hai login folder me .
+
+//? Syntax of useRouter hook
+// "use client";
+// import { useRouter } from "next/navigation";
+// const router = useRouter();
+
+//* Methods of useRouter hook
+//1. router.push(): Navigates to a new page , Adds entry to browser history , User can go back
+// 2. router.replace(): Navigates to a page , Does NOT add entry to browser history , Back button will NOT go to previous page
+// 3. router.back(): Goes to previous page
+// 4. router.forward(): Moves to the next page in history
+// 5. router.prefetch(): Preloads a page in the background.
+
+//! Q8. What is redirect in nextjs?
+// redirect() is a Next.js navigation function used to immediately redirect the user to another route.
+// It is mainly used in Server Components, Server Actions, Route Handlers, and Middleware.
+// Iske baad ka code execute nahi hota.
+
+//? Sever components me navigation ke liye use karo redirect() ko.
+//? Client components me navigation ke liye use karo useRouter() ka.
