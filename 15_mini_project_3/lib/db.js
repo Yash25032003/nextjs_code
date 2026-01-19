@@ -1,0 +1,22 @@
+import mongoose, { connect } from "mongoose";
+const MONGODB_URI = process.env.MONGODB_URI;
+
+let isConnected = false;
+
+async function Dbconnect() {
+  if (isConnected) {
+    console.log("Mongodb is already connected");
+    return;
+  }
+
+  try {
+    const db = await mongoose.connect(MONGODB_URI);
+    isConnected = db.connections[0].readyState === 1;
+    console.log("Connected to mongodb");
+  } catch (error) {
+    console.error("Failed to connect to mongodb:", error);
+    throw error;
+  }
+}
+
+export default Dbconnect;
