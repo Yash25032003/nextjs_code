@@ -13,6 +13,7 @@ const ContactForm = () => {
   const [message, setMessage] = useState("");
 
   async function onSubmit(formdata) {
+    // jab bhi form submit hoga ye onSubmit function formdata parameter ke andar sabhi form data ko store rakhega
     setIsSubmitting(true);
     setMessage("");
 
@@ -22,6 +23,7 @@ const ContactForm = () => {
     if (result.success) {
       setMessage("Message sent successfully");
 
+      // from reset kar rahe hai using JS
       const form = document.getElementById("contact-form");
       form.reset();
     } else {
