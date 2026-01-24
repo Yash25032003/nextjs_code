@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import connectDb from "@/lib/db";
 import TodoForm from "@/components/todo-form";
+import TodoList from "@/components/todo-list";
+import TodoFilter from "@/components/todo-filter";
 export default async function Home() {
   const connection = await connectDb();
   return (
@@ -13,6 +15,8 @@ export default async function Home() {
             Built with Next.js, Zustand, TanStack Query, Zod & Mongoose
           </p>
           <TodoForm />
+          <TodoFilter />
+          <TodoList />
         </header>
         <main></main>
       </div>
